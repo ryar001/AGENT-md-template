@@ -1,4 +1,10 @@
 2025-12-26
+
+What's New
+* gemini-extension.json:
+    * Added extension configuration including name, version, description, context file, and command mappings.
+
+2025-12-26
 What's New
 - GEMINI.md: Global Behavioral Guardrails and agent persona.
 - README.md: Gemini CLI Agent Manifest and usage guide.

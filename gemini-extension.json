@@ -1,6 +1,13 @@
 {
-  "name": "agent-md-template",
-  "version": "0.1.0",
-  "description": "Standardized Agentic Workflow Template",
-  "contextFileName": "GEMINI.md"
+    "name": "agent-md-template",
+    "version": "0.1.0",
+    "description": "Standardized Agentic Workflow Template",
+    "contextFileName": "GEMINI.md",
+    "commands": {
+        "init": "commands/init.toml",
+        "task": "commands/task.toml",
+        "preflight": "commands/preflight.toml",
+        "test": "commands/test.toml",
+        "track": "commands/track.toml"
+    }
 }
