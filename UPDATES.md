@@ -1,3 +1,6 @@
+Refactor: commands/track.toml
+- Updated description for the 'track' command to detail a new workflow for transactional checkpoints. The new process involves executing `uvx dev-mcp run_ai_tracker --path .`, handling potential command failures, and iterating until no bugs are reported.
+
 Warnings
 - No breakpoints found.
 
