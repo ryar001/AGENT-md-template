@@ -3,6 +3,13 @@ silence = true
 
 prompt = """
 1. run the dev-tools mcp server `run_ai_tracker`
+    - if not found  ask user to install it with 
+        "dev-tools": {
+            "command": "uvx",
+            "args": [
+                "dev-mcp"
+            ]
+        },
 2. Fix any bugs that are reported by the ai-tracker
 3. repeat until no bugs are reported
 """

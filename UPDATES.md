@@ -1,3 +1,16 @@
+Warnings
+- No breakpoints found.
+
+Refactor
+commands/test.toml:
+  - Enhanced test orchestration with mandatory context synchronization and environment preparation steps.
+  - Introduced immediate `pytest` execution with `-v` flag and pre-execution test fixing.
+  - Added robust result analysis, logging failures to `BUGS_LOG.md` and providing a clear success message.
+
+What's New
+commands/track.toml:
+  - Added configuration for `uvx dev-mcp` within `dev-tools`, including a prompt for user to install if not found.
+
 2025-12-26
 
 What's New

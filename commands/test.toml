@@ -2,14 +2,18 @@ description = "Testing Orchestration"
 silence = true
 
 prompt = """
-1. **Prepare Environment**:
+1. **Context Synchronization**:
+   - MUST Check conversation history first.
+   - IF `TASK.md` and `PLANNING.md` (or `plan.md`) were read in the previous step or are currently visible: SKIP reading them again.
+   - ELSE: Read them now to align tests with the current objective.
+
+2. **Prepare Environment**:
    - Load environment variables from `.env.test` if it exists.
    - Ensure the `.venv` is active.
 
-2. **Test Creation Guidelines**:
+3. **Test Standards & Creation**:
    - **Structure**: Place tests in `/tests`, mirroring the main project structure.
    - **Framework**: MUST use `pytest`.
-    - run with "uv run pytest"
    - **Coverage**:
      - Expected use case.
      - At least one edge case.
@@ -24,14 +28,12 @@ prompt = """
    - **Error Handling**: Always add failure tests to verify error handling.
    - **Maintenance**: Update tests whenever underlying logic changes.
 
-3. **Execute Tests**:
-   - Run `pytest`.
-   - Use strictly necessary flags (e.g., `-v`, `-s` if debugging is needed, but prefer silent success).
+4. **Test Execution (IMMEDIATE ACTION)**:
+   - YOU MUST IMMEDIATELY RUN `pytest` (or `uv run pytest`). DO NOT WAIT FOR USER APPROVAL.
+   - Use strictly necessary flags (e.g., `-v`).
+   - If tests are missing or the structure is wrong according to context, fix them first, THEN run.
 
-4. **Analyze Results**:
-   - If tests fail, summarize the failure succinctly and log errors/bugs to `BUGS_LOG.md` at project root (include the fix tried and the outcome).
-   - If tests pass, output ONLY: "All tests passed."
-
-5. **Restriction**:
-   - Do not dump large test logs unless requested for debugging a specific failure.
+5. **Analyze Results**:
+   - If tests fail, summarize failure and log to `BUGS_LOG.md` (include the fix tried and the outcome).
+   - If tests pass, output ONLY: "✅ All tests passed."
 """
