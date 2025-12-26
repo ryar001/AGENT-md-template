@@ -1,6 +1,6 @@
 {
     "name": "agent-md-template",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "Standardized Agentic Workflow Template",
     "contextFileName": "GEMINI.md",
     "commands": {
