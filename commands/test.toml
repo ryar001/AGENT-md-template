@@ -1,10 +1,6 @@
-[meta]
 description = "Testing Orchestration"
-
-[behavior]
 silence = true
 
-[instructions]
 prompt = """
 1. **Prepare Environment**:
    - Load environment variables from `.env.test` if it exists.

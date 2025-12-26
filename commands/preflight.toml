@@ -1,10 +1,6 @@
-[meta]
 description = "Research & Hallucination Guard"
-
-[behavior]
 silence = true
 
-[instructions]
 prompt = """
 1. **Analyze Request**: Identify libraries and methods intended for use in the upcoming task.
 

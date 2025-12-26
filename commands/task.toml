@@ -1,10 +1,6 @@
-[meta]
 description = "Task Management"
-
-[behavior]
 silence = true
 
-[instructions]
 prompt = """
 1. **Read Task Context**:
    - Read `TASK.md` (or equivalent) to understand the current objective.

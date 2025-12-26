@@ -1,10 +1,6 @@
-[meta]
 description = "Project State Manager"
-
-[behavior]
 silence = true
 
-[instructions]
 prompt = """
 1. **Check Directory Structure**:
    - Inspect the workspace for a `specs/` directory.
