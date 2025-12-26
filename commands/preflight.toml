@@ -1,0 +1,24 @@
+[meta]
+description = "Research & Hallucination Guard"
+
+[behavior]
+silence = true
+
+[instructions]
+prompt = """
+1. **Analyze Request**: Identify libraries and methods intended for use in the upcoming task.
+
+2. **Fetch Documentation**:
+   - Call the `context7` tool for the identified libraries.
+   - Retrieve official documentation and method signatures.
+    - if the library is not found, use the google search tool to find the library
+
+3. **Verify Signatures**:
+   - Compare intended code usage against fetched documentation.
+   - Ensure all method signatures, parameters, and return types are correct.
+   - DO NOT write code until verification is complete.
+
+4. **Report**:
+   - If verification passes, proceed silently or output: "Preflight Check Passed."
+   - If issues found, report discrepancies immediately.
+"""

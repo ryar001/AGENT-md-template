@@ -1,0 +1,22 @@
+[meta]
+description = "Task Management"
+
+[behavior]
+silence = true
+
+[instructions]
+prompt = """
+1. **Read Task Context**:
+   - Read `TASK.md` (or equivalent) to understand the current objective.
+
+2. **Update Status**:
+   - If a sub-task is completed, mark it as done [x].
+   - If a new sub-task arises, add it to the list.
+
+3. **Plan Next Step**:
+   - Identify the immediate next action based on the task list.
+   - Ensure it aligns with `plan.md` if it exists.
+
+4. **Output**:
+   - Return the Current Objective and Next Action.
+"""

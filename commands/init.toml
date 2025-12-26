@@ -1,0 +1,25 @@
+[meta]
+description = "Project State Manager"
+
+[behavior]
+silence = true
+
+[instructions]
+prompt = """
+1. **Check Directory Structure**:
+   - Inspect the workspace for a `specs/` directory.
+   - Compare with root files to understand project layout.
+
+2. **Migrate Files**:
+   - IF `PLANNING.md` exists AND `plan.md` does NOT exist:
+     - Move content from `PLANNING.md` to `plan.md`.
+     - Delete `PLANNING.md`.
+
+3. **Initialize Missing Files**:
+   - Check for `BUGS_LOG.md`. If missing, create it with a standard header.
+   - Check for `UPDATES.md`. If missing, create it with a standard header.
+
+4. **Report Status**:
+   - Return EXACTLY and ONLY the following string (replacing boolean):
+     "Workspace Synchronized (Specs detected: [True/False])."
+"""

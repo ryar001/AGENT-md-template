@@ -1,0 +1,12 @@
+[meta]
+description = "Transactional Checkpoint"
+
+[behavior]
+silence = true
+
+[instructions]
+prompt = """
+1. run the dev-tools mcp server `run_ai_tracker`
+2. Fix any bugs that are reported by the ai-tracker
+3. repeat until no bugs are reported
+"""

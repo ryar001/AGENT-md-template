@@ -1,0 +1,41 @@
+[meta]
+description = "Testing Orchestration"
+
+[behavior]
+silence = true
+
+[instructions]
+prompt = """
+1. **Prepare Environment**:
+   - Load environment variables from `.env.test` if it exists.
+   - Ensure the `.venv` is active.
+
+2. **Test Creation Guidelines**:
+   - **Structure**: Place tests in `/tests`, mirroring the main project structure.
+   - **Framework**: MUST use `pytest`.
+    - run with "uv run pytest"
+   - **Coverage**:
+     - Expected use case.
+     - At least one edge case.
+     - At least one failure case.
+   - **API Testing**:
+     - Check official docs for expected results first.
+     - **Environment**: Create `.env.test` for API keys (e.g., `GEMINI_API_KEY=YOUR_KEY`).
+     - **Logic**:
+       - Key missing? Mock the test.
+       - Key present (or not needed)? Run live test.
+       - Required key missing? Prompt user to fill `.env.test`.
+   - **Error Handling**: Always add failure tests to verify error handling.
+   - **Maintenance**: Update tests whenever underlying logic changes.
+
+3. **Execute Tests**:
+   - Run `pytest`.
+   - Use strictly necessary flags (e.g., `-v`, `-s` if debugging is needed, but prefer silent success).
+
+4. **Analyze Results**:
+   - If tests fail, summarize the failure succinctly and log errors/bugs to `BUGS_LOG.md` at project root (include the fix tried and the outcome).
+   - If tests pass, output ONLY: "All tests passed."
+
+5. **Restriction**:
+   - Do not dump large test logs unless requested for debugging a specific failure.
+"""
