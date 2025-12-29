@@ -1,3 +1,9 @@
+GEMINI.md
+  Refactor
+    Updated preferred stack to include StrEnum, Literal, TypedDict, Pydantic for type safety, and LangGraph, Guardrail-ai, RAGAs for agents and validation.
+  Chore
+    Added mandatory workflow trigger for task completion tracking.
+
 Warnings:
 None found.
 
