@@ -1,3 +1,11 @@
+What's New
+----------
+GEMINI.md
+- Added new mandatory workflow trigger for debugging: `/debug` command.
+
+gemini-extension.json
+- Registered the `debug` command.
+
 GEMINI.md
   Refactor
     Updated preferred stack to include StrEnum, Literal, TypedDict, Pydantic for type safety, and LangGraph, Guardrail-ai, RAGAs for agents and validation.

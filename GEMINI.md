@@ -30,3 +30,5 @@ Before executing any user request, you must verify the project state using these
     - For APIs: Run `/preflight` to fetch documentation via `context7`.
     - For Logic: Run `/test` immediately after code generation.
 4.  **Completion**: Prompt the user to run `/track` once a milestone is reached.
+5.  **Debugging**: Run `/debug` if the user reports a bug or error.
+

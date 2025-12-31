@@ -8,6 +8,7 @@
         "task": "commands/task.toml",
         "preflight": "commands/preflight.toml",
         "test": "commands/test.toml",
-        "track": "commands/track.toml"
+        "track": "commands/track.toml",
+        "debug": "commands/debug.toml"
     }
 }
