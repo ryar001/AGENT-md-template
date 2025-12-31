@@ -1,5 +1,10 @@
 What's New
 ----------
+2025-12-31
+* commands/debug.toml: Added a new deep debugging command. This command defines a protocol for analyzing issues, creating a `DEBUG_PLAN.md`, seeking user review, and then executing the plan.
+
+What's New
+----------
 GEMINI.md
 - Added new mandatory workflow trigger for debugging: `/debug` command.
 

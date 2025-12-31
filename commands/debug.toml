@@ -1,0 +1,27 @@
+description = "Deep Debugging Protocol"
+silence = true
+
+prompt = """
+Perform a deep debugging session based on the user's input.
+
+1.  **Analyze & Investigate**:
+    - If the user provides an error/traceback: Analyze the error, search the codebase for the relevant lines, and formulate hypotheses.
+    - If the user points to a file/module: detailedly read and analyze the code for potential logic errors, edge cases, or bad practices.
+
+2.  **Draft Plan (DEBUG_PLAN.md)**:
+    - Create a file named `DEBUG_PLAN.md` in the root of the workspace.
+    - Structure it with:
+        - **Issue Analysis**: What is broken and why.
+        - **Hypotheses**: Potential causes.
+        - **Step-by-Step Fix Plan**: Exact changes to be made.
+        - **Verification Strategy**: How to prove the fix works (new tests, existing tests).
+
+3.  **Review Loop**:
+    - Use `notify_user` to ask the user to review `DEBUG_PLAN.md`.
+    - Explicitly ask: "I have created DEBUG_PLAN.md. Please review it. Shall I proceed with these steps or do you have adjustments?"
+
+4.  **Execute & Verify**:
+    - Once approved (or if the user says "proceed"), execute the steps in the plan.
+    - Run the verification steps.
+    - Report the final status.
+"""
