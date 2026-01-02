@@ -5,7 +5,7 @@ Chore:
 
 2026-01-02
 Chore:
-- Incremented version to 0.0.13.
+- Synced version to 0.1.3 to match extension manifest.
 - Executed AI tracker via `uvx dev-mcp run_ai_tracker`; no bugs reported.
 
 2026-01-02
