@@ -11,6 +11,7 @@ Goal is to immediately execute the `run_ai_tracker` tool without any delay, text
                 "dev-mcp"
             ]
         }
-3. Fix any bugs that are reported by the ai-tracker.
+3. If any bugs that are reported by the ai-tracker, run `/debug`.
 4. Repeat until no bugs are reported.
+5. create/update `UPDATES.md` with the changes made.
 """

@@ -1,3 +1,9 @@
+2026-01-02
+Refactor:
+  commands/track.toml:
+    - Add instruction to run `/debug` if `ai-tracker` reports bugs.
+    - Add instruction to create/update `UPDATES.md` with changes made.
+
 What's New
 ----------
 2025-12-31
