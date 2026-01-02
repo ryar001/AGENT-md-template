@@ -4,6 +4,11 @@ Chore:
   - Introduced a markdown template for generating a test overview report.
 
 2026-01-02
+Chore:
+- Incremented version to 0.0.13.
+- Executed AI tracker via `uvx dev-mcp run_ai_tracker`; no bugs reported.
+
+2026-01-02
 Refactor:
   commands/track.toml:
     - Add instruction to run `/debug` if `ai-tracker` reports bugs.
