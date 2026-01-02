@@ -1,3 +1,8 @@
+Chore:
+- commands/test.toml:
+  - Added detailed testing orchestration steps, covering sync, setup, standards, action, and analysis.
+  - Introduced a markdown template for generating a test overview report.
+
 2026-01-02
 Refactor:
   commands/track.toml:

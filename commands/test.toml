@@ -2,38 +2,31 @@ description = "Testing Orchestration"
 silence = true
 
 prompt = """
-1. **Context Synchronization**:
-   - MUST Check conversation history first.
-   - IF `TASK.md` and `PLANNING.md` (or `plan.md`) were read in the previous step or are currently visible: SKIP reading them again.
-   - ELSE: Read them now to align tests with the current objective.
+1. **Sync**: Check conversation history; skip reading `task.md` or `plan.md` if already seen.
+2. **Setup**: Load `.env.test` if present; ensure `.venv` is active via `uv`.
+3. **Standards**: Tests MUST use `pytest` in `/tests`, covering healthy, edge, and failure cases.
+4. **Action**: Immediately run `uv run pytest -v`.
+5. **Analyze**:
+   - IF Fail: Log failure and fix attempt to `BUGS_LOG.md`.
+   - IF Pass: Output ONLY "✅ All tests passed."
+6. **Test Overview**:
+   - Create `TEST_OVERVIEW.md` using the following style:
+     ```markdown
+     # 🧪 Test Overview: [Project Name]
+     > **Total Tests:** [Count] | **Success Rate:** [Percentage]% | **Last Run:** [Date]
 
-2. **Prepare Environment**:
-   - Load environment variables from `.env.test` if it exists.
-   - Ensure the `.venv` is active.
+     ## 📊 Component Status
+     | Area | Coverage | Integrity | Result |
+     | :--- | :--- | :--- | :--- |
+     | **[Component]** | 🟢 [Percentage]% | [Status] | `PASS` |
 
-3. **Test Standards & Creation**:
-   - **Structure**: Place tests in `/tests`, mirroring the main project structure.
-   - **Framework**: MUST use `pytest`.
-   - **Coverage**:
-     - Expected use case.
-     - At least one edge case.
-     - At least one failure case.
-   - **API Testing**:
-     - Check official docs for expected results first.
-     - **Environment**: Create `.env.test` for API keys (e.g., `GEMINI_API_KEY=YOUR_KEY`).
-     - **Logic**:
-       - Key missing? Mock the test.
-       - Key present (or not needed)? Run live test.
-       - Required key missing? Prompt user to fill `.env.test`.
-   - **Error Handling**: Always add failure tests to verify error handling.
-   - **Maintenance**: Update tests whenever underlying logic changes.
-
-4. **Test Execution (IMMEDIATE ACTION)**:
-   - YOU MUST IMMEDIATELY RUN `pytest` (or `uv run pytest`). DO NOT WAIT FOR USER APPROVAL.
-   - Use strictly necessary flags (e.g., `-v`).
-   - If tests are missing or the structure is wrong according to context, fix them first, THEN run.
-
-5. **Analyze Results**:
-   - If tests fail, summarize failure and log to `BUGS_LOG.md` (include the fix tried and the outcome).
-   - If tests pass, output ONLY: "✅ All tests passed."
+     ---
+     ## 🔍 Deep Dive
+     ### [Component] ([File])
+     - **Scope**: [Description]
+     - **Matrix**:
+       - `Happy Path`: ✅ Verified
+       - `Edge Cases`: ✅ Verified
+       - `Error Handling`: ✅ Verified
+     ```
 """
