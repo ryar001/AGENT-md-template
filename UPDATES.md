@@ -1,3 +1,11 @@
+Docs
+  - installation_guide.md:
+    - Added new markdown file detailing extension installation (Git/local), automatic `dev-tools` MCP server configuration via `gemini-extension.json`, and verification steps.
+
+Feat
+  - gemini-extension.json:
+    - Added `mcpServers` configuration to register `dev-tools` MCP server, enabling advanced tracking via `uvx dev-mcp`.
+
 Chore:
 - commands/test.toml:
   - Added detailed testing orchestration steps, covering sync, setup, standards, action, and analysis.
