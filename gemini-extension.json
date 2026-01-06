@@ -9,7 +9,8 @@
         "preflight": "commands/preflight.toml",
         "test": "commands/test.toml",
         "track": "commands/track.toml",
-        "debug": "commands/debug.toml"
+        "debug": "commands/debug.toml",
+        "plan": "commands/plan.toml"
     },
     "mcpServers": {
         "dev-tools": {

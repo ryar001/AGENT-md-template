@@ -1,3 +1,13 @@
+What's New:
+- New Command: 'plan'
+  - Description: Adds a new command for generating detailed implementation plans. This command includes a structured planning process, file management, and user review loop.
+  - Files: `commands/plan.toml`
+
+Configuration:
+- Update: `gemini-extension.json`
+  - Description: Registers the new `plan` command.
+  - Files: `gemini-extension.json`
+
 Docs
   - installation_guide.md:
     - Added new markdown file detailing extension installation (Git/local), automatic `dev-tools` MCP server configuration via `gemini-extension.json`, and verification steps.
