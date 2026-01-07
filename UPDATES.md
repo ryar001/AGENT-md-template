@@ -1,6 +1,9 @@
 Chore:
     gemini-extension.json:
         Added "contextFileName": "AGENT.md" to configure context file.
+        Version updated to 0.5.1.
+    __version__.py:
+        Version updated to 0.5.1.
 
 What's New:
 * commands/overview.toml: Added a new `overview` command for project documentation generation, including logic for architecture and feature documentation.
