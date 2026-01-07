@@ -5,7 +5,7 @@ Refactor:
 * commands/preflight.toml: Updated prompt to include using Google Search for library discovery.
 
 Chore:
-* Project version updated to `0.4.0`. This is reflected in `UPDATES.md` and `gemini-extension.json`.
+* Project version updated to `0.5.0`. This is reflected in `UPDATES.md` and `gemini-extension.json`.
 
 Warnings:
 None
