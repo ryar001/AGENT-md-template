@@ -1,3 +1,13 @@
+What's New (2026-01-07)
+  commands/overview.toml:
+    - Added 'overview.toml' defining a Project Documentation Generator command. This command automates the creation and updating of project documentation, including architecture and feature-specific markdown files, based on code analysis.
+  AGENT.md:
+    - Updated agent's workflow to include project overview and documentation management. Instructions are added for utilizing the new `/overview` command and maintaining documentation files like ARCHITECTURE.md and PROJECT_README.md.
+
+Chore (2026-01-07)
+  gemini-extension.json:
+    - Updated extension version to "0.2.1".
+
 What's New:
 - New Command: 'overview'
   - Description: Generates and maintains project documentation (Architecture, README, Features) in `PROJECT_OVERVIEW`.
