@@ -1,25 +1,24 @@
 What's New:
-- New Command: 'plan'
-  - Description: Adds a new command for generating detailed implementation plans. This command includes a structured planning process, file management, and user review loop.
-  - Files: `commands/plan.toml`
+- New Command: 'overview'
+  - Description: Generates and maintains project documentation (Architecture, README, Features) in `PROJECT_OVERVIEW`.
+  - Files: `commands/overview.toml`
 
 Configuration:
 - Update: `gemini-extension.json`
-  - Description: Registers the new `plan` command.
-  - Files: `gemini-extension.json`
+  - Version: 0.2.1
+  - Description: Registered `/overview` command integration in `AGENT.md`.
 
-Docs
-  - installation_guide.md:
-    - Added new markdown file detailing extension installation (Git/local), automatic `dev-tools` MCP server configuration via `gemini-extension.json`, and verification steps.
-
-Feat
-  - gemini-extension.json:
-    - Added `mcpServers` configuration to register `dev-tools` MCP server, enabling advanced tracking via `uvx dev-mcp`.
+2026-01-07
+Feat:
+- commands/overview.toml:
+  - Added logic for `/overview` command to analyze project structure and generate documentation.
+- AGENT.md:
+  - Added new "Project Overview & Documentation" section.
+  - Added mandatory rules to run `/overview` if documentation is missing.
 
 Chore:
-- commands/test.toml:
-  - Added detailed testing orchestration steps, covering sync, setup, standards, action, and analysis.
-  - Introduced a markdown template for generating a test overview report.
+- gemini-extension.json:
+  - Bumped version to 0.2.1.
 
 2026-01-02
 Chore:
@@ -30,7 +29,7 @@ Chore:
 Refactor:
   commands/track.toml:
     - Add instruction to run `/debug` if `ai-tracker` reports bugs.
-    - Add instruction to create/update `UPDATES.md` with changes made.
+    - Add instruction to create/update `UPDATES.md` with the changes made.
 
 What's New
 ----------

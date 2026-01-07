@@ -31,4 +31,13 @@ Before executing any user request, you must verify the project state using these
     - For Logic: Run `/test` immediately after code generation.
 4.  **Completion**: Prompt the user to run `/track` once a milestone is reached.
 5.  **Debugging**: Run `/debug` if the user reports a bug or error.
+6.  **Project Overview**: Run `/overview` if `PROJECT_OVERVIEW` is missing.
+
+## 5. Project Overview & Documentation
+* **Context Loading**: At the start of a conversation, IF `PROJECT_OVERVIEW` exists, you MUST read `ARCHITECTURE.md` and `PROJECT_README.md` to understand the project.
+* **Maintenance**: If `PROJECT_OVERVIEW` is missing, you MUST run `/overview` to generate it.
+* **Feature Workflow**: 
+    - When implementing NEW features: Create a new `.md` file in `PROJECT_OVERVIEW` and update `ARCHITECTURE.md`.
+    - When updating EXISTING features: Read the relevant feature `.md` file first. Update it after changes.
+    - Do NOT read all feature files; only those relevant to the current task.
 
