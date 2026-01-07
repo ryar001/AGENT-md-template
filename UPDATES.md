@@ -1,3 +1,18 @@
+Warnings:
+None
+
+Refactor:
+* AGENT.md: Updated instructions for project overview and feature workflow management.
+* README.md: Restructured command list and removed outdated "Global Instructions" mention.
+
+What's New:
+* README.md: New slash commands /overview, /debug, /plan added.
+* gemini-extension.json: Registered plan and overview commands.
+
+Chore:
+* __version__.py: Version updated to 0.3.1.
+* gemini-extension.json: Version updated to 0.3.1.
+
 What's New (2026-01-07)
   commands/overview.toml:
     - Added 'overview.toml' defining a Project Documentation Generator command. This command automates the creation and updating of project documentation, including architecture and feature-specific markdown files, based on code analysis.
