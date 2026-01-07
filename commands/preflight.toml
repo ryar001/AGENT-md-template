@@ -6,6 +6,7 @@ prompt = """
 
 2. **Fetch Documentation**:
    - Call the `context7` tool for the identified libraries.
+    - if not found, use the google search tool to find the library
    - Retrieve official documentation and method signatures.
     - if the library is not found, use the google search tool to find the library
 

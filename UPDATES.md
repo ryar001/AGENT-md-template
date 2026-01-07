@@ -1,3 +1,12 @@
+What's New:
+* commands/overview.toml: Added a new `overview` command for project documentation generation, including logic for architecture and feature documentation.
+
+Refactor:
+* commands/preflight.toml: Updated prompt to include using Google Search for library discovery.
+
+Chore:
+* Project version updated to `0.4.0`. This is reflected in `UPDATES.md` and `gemini-extension.json`.
+
 Warnings:
 None
 
@@ -10,8 +19,8 @@ What's New:
 * gemini-extension.json: Registered plan and overview commands.
 
 Chore:
-* __version__.py: Version updated to 0.3.1.
-* gemini-extension.json: Version updated to 0.3.1.
+* __version__.py: Version updated to 0.4.0.
+* gemini-extension.json: Version updated to 0.4.0.
 
 What's New (2026-01-07)
   commands/overview.toml:
