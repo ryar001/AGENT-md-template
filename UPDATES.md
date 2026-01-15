@@ -1,3 +1,8 @@
+What's New:
+gemini-extension.json
+- Added 'overview' command configuration pointing to commands/overview.toml.
+- Added 'extension' command configuration pointing to commands/extension.toml.
+
 **New Feature**
 *   `/AGENTS/GO_AGENT.md`: Defines Go development standards, tooling, and preferred stack.
 *   `/AGENTS/JS_AGENT.md`: Defines JavaScript/TypeScript development standards, tooling, and preferred stack.

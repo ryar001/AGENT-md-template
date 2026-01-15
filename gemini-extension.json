@@ -11,7 +11,8 @@
         "track": "commands/track.toml",
         "debug": "commands/debug.toml",
         "plan": "commands/plan.toml",
-        "overview": "commands/overview.toml"
+        "overview": "commands/overview.toml",
+        "extension": "commands/extension.toml"
     },
     "mcpServers": {
         "dev-tools": {
