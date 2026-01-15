@@ -1,3 +1,7 @@
+Refactor:
+  gemini-extension.json (2026-01-15)
+    - Updated version to 0.6.9
+
 Warnings:
 (None)
 
