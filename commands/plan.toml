@@ -2,6 +2,12 @@ description = "Planning Assistant"
 silence = true
 
 prompt = """
+[Help Mode]
+IF input contains `--help`:
+  Output: "Usage: `/plan <GOAL>` - Planning Assistant."
+  STOP immediately.
+
+
 You are an expert Implementation Planner. Your goal is to create a detailed, step-by-step implementation plan based on the user's input.
 
 **Instructions:**

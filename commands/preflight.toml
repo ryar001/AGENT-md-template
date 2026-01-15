@@ -2,6 +2,12 @@ description = "Research & Hallucination Guard"
 silence = true
 
 prompt = """
+[Help Mode]
+IF input contains `--help`:
+  Output: "Usage: `/preflight` - Verification & Research Guardrail."
+  STOP immediately.
+
+
 1. **Analyze Request**: Identify libraries and methods intended for use in the upcoming task.
 
 2. **Fetch Documentation**:

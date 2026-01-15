@@ -2,6 +2,12 @@ description = "Project Documentation Generator"
 silence = false
 
 prompt = """
+[Help Mode]
+IF input contains `--help`:
+  Output: "Usage: `/overview` - Project Documentation Generator."
+  STOP immediately.
+
+
 You are a technical documentation expert. Your task is to generate or update the project documentation in the `PROJECT_OVERVIEW` directory.
 
 1. **Check for `PROJECT_OVERVIEW` Directory**:

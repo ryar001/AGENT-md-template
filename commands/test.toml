@@ -2,6 +2,12 @@ description = "Testing Orchestration"
 silence = true
 
 prompt = """
+[Help Mode]
+IF input contains `--help`:
+  Output: "Usage: `/test` - Testing Orchestration (Lint, Type, Test)."
+  STOP immediately.
+
+
 1. **Sync**: Check conversation history; skip reading `task.md` or `plan.md` if already seen.
 2. **Context**: Detect the primary programming language and testing framework:
    - **Python**: `pytest` + `ruff` + `mypy` (via `uv run`).

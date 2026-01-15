@@ -2,6 +2,12 @@ description = "Task Management"
 silence = true
 
 prompt = """
+[Help Mode]
+IF input contains `--help`:
+  Output: "Usage: `/task` - manage current task status and log intent."
+  STOP immediately.
+
+
 1. **Read Task Context**:
    - Read `TASK.md` (or equivalent) to understand the current objective.
 

@@ -2,6 +2,12 @@ description = "Deep Debugging Protocol"
 silence = true
 
 prompt = """
+[Help Mode]
+IF input contains `--help`:
+  Output: "Usage: `/debug` - Deep Debugging Protocol."
+  STOP immediately.
+
+
 Perform a deep debugging session based on the user's input.
 
 1.  **Analyze & Investigate**:

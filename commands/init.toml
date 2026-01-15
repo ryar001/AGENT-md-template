@@ -2,6 +2,12 @@ description = "Project State Manager"
 silence = true
 
 prompt = """
+[Help Mode]
+IF input contains `--help`:
+  Output: "Usage: `/init` - Initialize or migrate project state."
+  STOP immediately.
+
+
 1. **Check Directory Structure**:
    - Inspect the workspace for a `specs/` directory.
    - Compare with root files to understand project layout.

@@ -1,3 +1,15 @@
+**Project Update Log (2026-01-15)**
+
+**What's New**
+*   **commands/debug.toml**: Added `--help` text for the `debug` command.
+*   **commands/init.toml**: Added `--help` text for the `init` command.
+*   **commands/overview.toml**: Added `--help` text for the `overview` command.
+*   **commands/plan.toml**: Added `--help` text for the `plan` command.
+*   **commands/preflight.toml**: Added `--help` text for the `preflight` command.
+*   **commands/task.toml**: Added `--help` text for the `task` command.
+*   **commands/test.toml**: Added `--help` text for the `test` command.
+*   **commands/track.toml**: Added `--help` text for the `track` command.
+
 What's New:
 gemini-extension.json
 - Added 'overview' command configuration pointing to commands/overview.toml.

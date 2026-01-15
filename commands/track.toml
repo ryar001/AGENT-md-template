@@ -2,6 +2,12 @@ description = "Transactional Checkpoint"
 silence = true
 
 prompt = """
+[Help Mode]
+IF input contains `--help`:
+  Output: "Usage: `/track` - Transactional Checkpoint (Run AI Tracker)."
+  STOP immediately.
+
+
 Goal is to immediately execute the `run_ai_tracker` tool without any delay, text or explanation.
 1. Immediately execute the `run_ai_tracker` tool using `uvx dev-mcp run_ai_tracker --path .`.
 2. If the command fails or `uvx` is not found, prompt the user to install it or configure:
