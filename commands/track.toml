@@ -13,16 +13,33 @@ IF input contains `--help`:
   STOP immediately.
 
 
-Goal is to immediately execute the `run_ai_tracker` tool without any delay, text or explanation.
-1. Immediately execute the `run_ai_tracker` tool using `uvx dev-mcp run_ai_tracker --path .`.
-2. If the command fails or `uvx` is not found, prompt the user to install it or configure:
-        "dev-tools": {
-            "command": "uvx",
-            "args": [
-                "dev-mcp"
-            ]
-        }
-3. If any bugs that are reported by the ai-tracker, run `/debug`.
-4. Repeat until no bugs are reported.
-5. create/update `UPDATES.md` with the changes made.
+Goal is to immediately execute the `run_ai_tracker` tool and synchronize version numbers.
+
+1.  **Preparation**:
+    - Read `__version__.py` to capture the **Current Version**.
+    - Store this version string in a temporary file `.version_tmp`.
+
+2.  **Execute Tracker**:
+    - Execute `uvx dev-mcp run_ai_tracker --path .`.
+    - If `uvx` fails, prompt for dev-tools config.
+
+3.  **Debug Loop**:
+    - If bugs reported -> `/debug`. Recursively fix until clean.
+
+4.  **Version Synchronization**:
+    - Read `__version__.py` again to get the **New Version**.
+    - Read `.version_tmp` to retrieve the **Old Version**.
+    - **IF** `New Version` != `Old Version`:
+        - Identify potential configuration files: `pyproject.toml`, `gemini-extension.json`.
+        - For each file found:
+            - Read content.
+            - **IF** content contains `version` AND the `Old Version` string:
+                - Replace `Old Version` -> `New Version`.
+                - Save file.
+                - Log: "Synced version in {filename}".
+
+5.  **Finalize**:
+    - Create/Update `UPDATES.md` with changes.
+    - Remove temporary file `.version_tmp`.
+    - Output: "✅ Tracked & Synced ({Old Version} -> {New Version})."
 """

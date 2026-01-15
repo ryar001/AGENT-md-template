@@ -1,3 +1,14 @@
+2026-01-15
+
+Chore:
+  gemini-extension.json
+    - Update version to 0.6.3.
+
+What's New:
+  commands/track.toml
+    - Enhance track command to execute `run_ai_tracker` tool, including version synchronization logic.
+    - The new workflow reads version files, runs the AI tracker, and updates configuration files and `UPDATES.md`.
+
 **What's New:**
 *   **commands/extension.toml**: Introduced `/extension` command for managing Gemini extensions. This includes installing from Git URLs and updating existing extensions. It also handles synchronization of extension rules (AGENT.md) and conversion of command TOML files to workflow MD files.
 

@@ -1,6 +1,6 @@
 {
     "name": "agent-md-template",
-    "version": "0.6.0",
+    "version": "0.6.3",
     "description": "Standardized Agentic Workflow Template",
     "contextFileName": "AGENT.md",
     "commands": {
