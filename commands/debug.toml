@@ -4,7 +4,14 @@ silence = true
 prompt = """
 [Help Mode]
 IF input contains `--help`:
-  Output: "Usage: `/debug` - Deep Debugging Protocol."
+  Output: 
+    """
+    Usage: `/debug [Context]`
+    Description: Deep Debugging Protocol. Analyzes errors, plans fix, executes.
+    Inputs:
+      - [Context]: Optional. Error trace, file path, or bug description.
+      - Default: Analyzes recent conversation history/errors.
+    """
   STOP immediately.
 
 

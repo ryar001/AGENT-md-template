@@ -1,0 +1,81 @@
+description = "Extension Manager (Install/Update)"
+
+prompt = """
+[Help Mode]
+IF input contains `--help`:
+  Output:
+    """
+    Usage: `/extension <subcommand> <args>`
+    Description: Extension Manager (Install/Update).
+    Inputs:
+      - install <URL> [--global]: Install from Git URL.
+      - update <Name> [--global]: Update existing extension.
+    """
+  STOP immediately.
+
+
+Usage: `/extension <subcommand> <args>`
+Subcommands: `update`, `install`
+
+1.  **Parse Command**:
+    - **`install <PACKAGE_URL> [--global]`**:
+        - `PACKAGE_URL`: Git repository URL.
+        - `PACKAGE_NAME`: Extracted from URL (e.g., `github.com/user/my-agent` -> `my-agent`).
+        - **Action**:
+            - Check if `~/.gemini/extensions/<PACKAGE_NAME>` exists.
+            - IF EXISTS: Abort or prompt validation.
+            - IF NEW: Run `git clone <PACKAGE_URL> ~/.gemini/extensions/<PACKAGE_NAME>`.
+            - Proceed to **Sync Step**.
+
+    - **`update <PACKAGE_NAME> [--global]`**:
+        - `PACKAGE_NAME`: Name of the extension directory.
+        - **Action**:
+            - Check if `~/.gemini/extensions/<PACKAGE_NAME>` exists.
+            - IF MISSING: Error "Extension not found".
+            - IF FOUND: Run `git pull` inside that directory.
+            - Proceed to **Sync Step**.
+
+3.  **Sync Step (Rules & Workflows)**:
+    - **Source Extension**: `~/.gemini/extensions/<PACKAGE_NAME>`
+    - **Target Destinations**:
+        - **Rules**: `<CurrentWorkspace>/AGENT.md` (or Global path if `--global`)
+        - **Workflows**:
+             - Default: `<CurrentWorkspace>/.agent/workflows/`
+             - If `--global`: `~/.gemini/antigravity/global_workflows/`
+
+    - **Logic**:
+        1. **AGENT.md Safety Check**:
+            - Compare `Source/AGENT.md` with `Target/AGENT.md`.
+            - IF **IDENTICAL**: Skip rule sync.
+            - IF **DIFFERENT** or **TARGET MISSING**:
+                - IF **TARGET MISSING**: Copy silently.
+                - IF **DIFFERENT**:
+                    - Generate a diff between the files.
+                    - Create a `AGENT_RULE_CHANGES` artifact containing the diff.
+                    - **Prompt User**:
+                        - "Rules (AGENT.md) have changed. View diff at [AGENT_RULE_CHANGES]. Options:"
+                        - "1. **Replace**: Overwrite target with source."
+                        - "2. **Merge**: Manually merge changes (I will open the file for you)."
+                        - "3. **Ignore**: Keep current target rules."
+                    - Wait for input.
+                    - Perform chosen action.
+
+        2. **Workflow Conversion**:
+            - List all `.toml` files in `Source/commands/`.
+            - For each TOML file:
+              - Read content.
+              - Parse `description` and `prompt`.
+              - Create `<Destination>/<filename>.md`.
+              - Format:
+                ```markdown
+                ---
+                description: {description_from_toml}
+                ---
+
+                {prompt_from_toml}
+                ```
+
+4.  **Report**:
+    - Output: "✅ Extension <PACKAGE_NAME> [installed/updated]."
+    - List updated files (Rules and Workflows) and any skipped changes.
+"""

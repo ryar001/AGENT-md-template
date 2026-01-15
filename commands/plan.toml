@@ -4,7 +4,13 @@ silence = true
 prompt = """
 [Help Mode]
 IF input contains `--help`:
-  Output: "Usage: `/plan <GOAL>` - Planning Assistant."
+  Output:
+    """
+    Usage: `/plan <Goal>`
+    Description: Planning Assistant. Generates implementation plan.
+    Inputs:
+      - <Goal>: Required. Description of feature/change (e.g., "Add user auth").
+    """
   STOP immediately.
 
 

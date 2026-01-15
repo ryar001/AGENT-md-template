@@ -4,7 +4,14 @@ silence = false
 prompt = """
 [Help Mode]
 IF input contains `--help`:
-  Output: "Usage: `/overview` - Project Documentation Generator."
+  Output:
+    """
+    Usage: `/overview [Path]`
+    Description: Project Documentation Generator.
+    Inputs: 
+      - [Path]: Optional. Specify root directory if not current.
+      - Default: Generates/Updates `PROJECT_OVERVIEW` in current root.
+    """
   STOP immediately.
 
 

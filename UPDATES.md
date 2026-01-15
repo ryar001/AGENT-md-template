@@ -1,3 +1,16 @@
+**What's New:**
+*   **commands/extension.toml**: Introduced `/extension` command for managing Gemini extensions. This includes installing from Git URLs and updating existing extensions. It also handles synchronization of extension rules (AGENT.md) and conversion of command TOML files to workflow MD files.
+
+**Documentation Updates:**
+*   **commands/debug.toml**: Updated command description for `/debug`.
+*   **commands/init.toml**: Updated command description for `/init`.
+*   **commands/overview.toml**: Updated command description for `/overview`.
+*   **commands/plan.toml**: Updated command description for `/plan`.
+*   **commands/preflight.toml**: Updated command description for `/preflight`.
+*   **commands/task.toml**: Updated command description for `/task`.
+*   **commands/test.toml**: Updated command description for `/test`.
+*   **commands/track.toml**: Updated command description for `/track`.
+
 **Project Update Log (2026-01-15)**
 
 **What's New**

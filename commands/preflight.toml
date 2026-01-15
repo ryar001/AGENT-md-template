@@ -4,7 +4,14 @@ silence = true
 prompt = """
 [Help Mode]
 IF input contains `--help`:
-  Output: "Usage: `/preflight` - Verification & Research Guardrail."
+  Output:
+    """
+    Usage: `/preflight [Context]`
+    Description: Verification & Research Guardrail. Checks docs before coding.
+    Inputs:
+      - [Context]: Optional. Specific libraries/methods to verify.
+      - Default: Analyzes the planned usage from conversation history.
+    """
   STOP immediately.
 
 

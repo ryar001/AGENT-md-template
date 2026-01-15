@@ -4,7 +4,12 @@ silence = true
 prompt = """
 [Help Mode]
 IF input contains `--help`:
-  Output: "Usage: `/init` - Initialize or migrate project state."
+  Output: 
+    """
+    Usage: `/init`
+    Description: Initialize or migrate project state.
+    Inputs: None (Analyzes workspace automatically).
+    """
   STOP immediately.
 
 
