@@ -1,3 +1,9 @@
+What's New:
+  commands/extension.toml
+    - Added detailed steps for synchronizing agent rule files and their dependencies.
+    - Includes logic for identifying rule files (GEMINI.md, AGENT.md), comparing source and target, handling differences, and syncing referenced agent files.
+    - Introduces the `AGENT_RULE_CHANGES` artifact for tracking rule file modifications.
+
 No breakpoints found.
 
 Refactor:

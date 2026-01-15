@@ -38,27 +38,46 @@ Subcommands: `update`, `install`
 3.  **Sync Step (Rules & Workflows)**:
     - **Source Extension**: `~/.gemini/extensions/<PACKAGE_NAME>`
     - **Target Destinations**:
-        - **Rules**: `<CurrentWorkspace>/AGENT.md` (or Global path if `--global`)
         - **Workflows**:
              - Default: `<CurrentWorkspace>/.agent/workflows/`
              - If `--global`: `~/.gemini/antigravity/global_workflows/`
+        - **Rules (Base)**: `<CurrentWorkspace>/` (or Global path if `--global`)
 
     - **Logic**:
-        1. **AGENT.md Safety Check**:
-            - Compare `Source/AGENT.md` with `Target/AGENT.md`.
-            - IF **IDENTICAL**: Skip rule sync.
+        1. **Identify Rule File**:
+            - Check `Source/GEMINI.md`. IF EXISTS: Set `RULE_FILE = GEMINI.md`.
+            - ELSE Check `Source/AGENT.md`. IF EXISTS: Set `RULE_FILE = AGENT.md`.
+            - ELSE:
+                - **Prompt User**: "No Agent Rule file (GEMINI.md/AGENT.md) found in extension. Create a new one? (Y/N)"
+                - IF Y: Create default `AGENT.md` in Source. Set `RULE_FILE = AGENT.md`.
+                - IF N: Skip Rule Sync.
+
+        2. **Sync Rule File**:
+            - **Target Path**: `<Target Base>/<RULE_FILE>`
+            - Compare `Source/<RULE_FILE>` with `Target Path`.
+            - IF **IDENTICAL**: Skip.
             - IF **DIFFERENT** or **TARGET MISSING**:
                 - IF **TARGET MISSING**: Copy silently.
                 - IF **DIFFERENT**:
-                    - Generate a diff between the files.
-                    - Create a `AGENT_RULE_CHANGES` artifact containing the diff.
+                    - Generate diff.
+                    - Create `AGENT_RULE_CHANGES` artifact.
                     - **Prompt User**:
-                        - "Rules (AGENT.md) have changed. View diff at [AGENT_RULE_CHANGES]. Options:"
+                        - "Rules (<RULE_FILE>) have changed. View diff at [AGENT_RULE_CHANGES]. Options:"
                         - "1. **Replace**: Overwrite target with source."
-                        - "2. **Merge**: Manually merge changes (I will open the file for you)."
-                        - "3. **Ignore**: Keep current target rules."
-                    - Wait for input.
-                    - Perform chosen action.
+                        - "2. **Merge**: Manually merge changes."
+                        - "3. **Ignore**: Keep current target."
+                    - Perform action.
+
+        3. **Sync Dependencies (Relative Paths)**:
+            - **Parse** `Source/<RULE_FILE>` for referenced agent files.
+            - Look for patterns like `AGENTS/*.md` or paths defined in "Language Specific Instructions" tables.
+            - FOR EACH `ReferencedFile`:
+                - Resolve `SourcePath` = `SourceDir` + `ReferencedFile`.
+                - Resolve `TargetPath` = `TargetDir` + `ReferencedFile`.
+                - IF `SourcePath` EXISTS:
+                    - Ensure `TargetDir` parent directories exist.
+                    - Copy `SourcePath` to `TargetPath` (overwriting or prompting if significantly different, similar to Rule File logic, or just overwrite for simplicity on dependencies).
+                    - *Note*: Ensure the path structure relative to `RULE_FILE` is preserved.
 
         2. **Workflow Conversion**:
             - List all `.toml` files in `Source/commands/`.
