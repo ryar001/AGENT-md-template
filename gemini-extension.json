@@ -1,6 +1,6 @@
 {
     "name": "agent-md-template",
-    "version": "0.6.4",
+    "version": "0.6.5",
     "description": "Standardized Agentic Workflow Template",
     "contextFileName": "AGENT.md",
     "commands": {
@@ -12,7 +12,8 @@
         "debug": "commands/debug.toml",
         "plan": "commands/plan.toml",
         "overview": "commands/overview.toml",
-        "extension": "commands/extension.toml"
+        "extension": "commands/extension.toml",
+        "readme": "commands/readme.toml"
     },
     "mcpServers": {
         "dev-tools": {
