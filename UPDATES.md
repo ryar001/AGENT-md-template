@@ -1,3 +1,18 @@
+**New Feature**
+*   `/AGENTS/GO_AGENT.md`: Defines Go development standards, tooling, and preferred stack.
+*   `/AGENTS/JS_AGENT.md`: Defines JavaScript/TypeScript development standards, tooling, and preferred stack.
+*   `/AGENTS/PYTHON_AGENT.md`: Defines Python development standards, tooling, and preferred stack.
+*   `/AGENTS/RUST_AGENT.md`: Defines Rust development standards, tooling, and preferred stack.
+
+**Refactor**
+*   `AGENT.md`: Restructured agent instructions and added language-specific mapping.
+
+**Enhancement**
+*   `commands/test.toml`: Enhanced test workflow to include language detection, static analysis pre-flight check, and detailed coverage reporting.
+
+**Configuration**
+*   `.gitignore`: Added `.gemini` directory and test file comments to ignore list.
+
 Chore:
     gemini-extension.json:
         Added "contextFileName": "AGENT.md" to configure context file.

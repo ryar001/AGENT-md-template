@@ -208,3 +208,6 @@ __marimo__/
 
 # gemini
 .gemini
+
+# /test generated files
+TEST_OVERVIEW.md

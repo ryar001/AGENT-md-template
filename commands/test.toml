@@ -3,30 +3,46 @@ silence = true
 
 prompt = """
 1. **Sync**: Check conversation history; skip reading `task.md` or `plan.md` if already seen.
-2. **Setup**: Load `.env.test` if present; ensure `.venv` is active via `uv`.
-3. **Standards**: Tests MUST use `pytest` in `/tests`, covering healthy, edge, and failure cases.
-4. **Action**: Immediately run `uv run pytest -v`.
+2. **Context**: Detect the primary programming language and testing framework:
+   - **Python**: `pytest` + `ruff` + `mypy` (via `uv run`).
+   - **JS/TS**: `npm test` + `eslint` + `tsc`.
+   - **Go**: `go test` + `golangci-lint`.
+   - **Rust**: `cargo test` + `cargo clippy`.
+3. **Pre-Flight (Quality Gate)**:
+   - Run **Static Analysis** FIRST (Linting & Type Checking).
+   - **IF Lint/Types Fail**: STOP immediately. Output logic errors. "You cannot test broken code."
+4. **Action (Test)**:
+   - Run tests WITH coverage flags (e.g., `uv run pytest --cov=. --cov-report=term-missing` for Python).
+   - Target specific files if mentioned.
 5. **Analyze**:
-   - IF Fail: Log failure and fix attempt to `BUGS_LOG.md`.
-   - IF Pass: Output ONLY "✅ All tests passed."
+   - **Fail**: Log failure details (Stack Trace + Input Logic) to `BUGS_LOG.md`.
+   - **Pass**:
+     - Check if Coverage > 80% (Warn if lower).
+     - Output "✅ Quality Gate Passed."
 6. **Test Overview**:
-   - Create `TEST_OVERVIEW.md` using the following style:
+   - Create or Update `TEST_OVERVIEW.md` using the style below.
+   - **Style Guide**:
      ```markdown
-     # 🧪 Test Overview: [Project Name]
-     > **Total Tests:** [Count] | **Success Rate:** [Percentage]% | **Last Run:** [Date]
+     # 🔬 Test Report
 
-     ## 📊 Component Status
-     | Area | Coverage | Integrity | Result |
-     | :--- | :--- | :--- | :--- |
-     | **[Component]** | 🟢 [Percentage]% | [Status] | `PASS` |
+     **Run Date:** [YYYY-MM-DD]
+     **Framework:** [Detected Framework]
 
-     ---
-     ## 🔍 Deep Dive
-     ### [Component] ([File])
-     - **Scope**: [Description]
-     - **Matrix**:
-       - `Happy Path`: ✅ Verified
-       - `Edge Cases`: ✅ Verified
-       - `Error Handling`: ✅ Verified
+     ## 🛡️ Quality Metrics
+     | check | Status | Score/Coverage |
+     | :--- | :--- | :--- |
+     | **Linting** | ✅ Pass | - |
+     | **Types** | ✅ Pass | Strict |
+     | **Coverage** | [✅/⚠️] | [Percentage]% |
+
+     ## 🔭 Scope: [Component/Module Name]
+
+     ### [1]. [Feature/Function Name]
+     - **Files**: `[Relative Path to Source File]`, `[Relative Path to Test File]`
+     - **What**: [Specific function, class, or behavior tested]
+     - **Why**: [Reason: Critical path, regression, feature add]
+     - **How**: [Methodology: Unit, Mock, Integration]
+     - **Result**: [✅ PASSED | ❌ FAILED]
      ```
+   - **Constraint**: You MUST fill in the "Files", "What", "Why", and "How" fields with specific context from the code.
 """
