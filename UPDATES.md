@@ -1,3 +1,20 @@
+Warnings:
+(None)
+
+What's New:
+(None)
+
+Bugfix:
+(None)
+
+Docs:
+- commands/extension.toml:
+  - Clarified the description for 'Rules (Base)'.
+
+Chore:
+- gemini-extension.json:
+  - Bumped version to 0.6.8.
+
 What's New:
   commands/extension.toml
     - Added detailed steps for synchronizing agent rule files and their dependencies.

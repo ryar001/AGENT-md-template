@@ -41,7 +41,7 @@ Subcommands: `update`, `install`
         - **Workflows**:
              - Default: `<CurrentWorkspace>/.agent/workflows/`
              - If `--global`: `~/.gemini/antigravity/global_workflows/`
-        - **Rules (Base)**: `<CurrentWorkspace>/` (or Global path if `--global`)
+        - **Rules (Base)**: `<CurrentWorkspace>/` (or `~/.gemini/` if `--global`)
 
     - **Logic**:
         1. **Identify Rule File**:
