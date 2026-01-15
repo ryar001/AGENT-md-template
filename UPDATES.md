@@ -1,3 +1,18 @@
+No breakpoints found.
+
+Refactor:
+  commands/:
+    - debug.toml: Escaped triple quotes in `prompt` string.
+    - extension.toml: Escaped triple quotes in `prompt` string.
+    - init.toml: Escaped triple quotes in `prompt` string.
+    - overview.toml: Escaped triple quotes in `prompt` string.
+    - plan.toml: Escaped triple quotes in `prompt` string.
+    - preflight.toml: Escaped triple quotes in `prompt` string.
+    - readme.toml: Escaped triple quotes in `prompt` string.
+    - task.toml: Escaped triple quotes in `prompt` string.
+    - test.toml: Escaped triple quotes in `prompt` string.
+    - track.toml: Escaped triple quotes in `prompt` string.
+
 ## 2026-01-15
 ### Documentation
 * AGENT.md: Added a note clarifying that file paths are relative to the AGENT.md file.

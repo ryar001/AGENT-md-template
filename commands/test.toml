@@ -5,13 +5,13 @@ prompt = """
 [Help Mode]
 IF input contains `--help`:
   Output:
-    """
+    \"""
     Usage: `/test [Target]`
     Description: Testing Orchestration (Lint, Type, Test).
     Inputs:
       - [Target]: Optional. Specific file or folder to test (e.g., `tests/test_main.py`).
       - Default: Runs full suite + static analysis.
-    """
+    \"""
   STOP immediately.
 
 

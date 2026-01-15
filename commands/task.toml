@@ -5,13 +5,13 @@ prompt = """
 [Help Mode]
 IF input contains `--help`:
   Output:
-    """
+    \"""
     Usage: `/task [Status Update]`
     Description: Manage current task status and log intent.
     Inputs: 
       - [Status Update]: Optional. Text status to log (e.g., "Fixing bug").
       - No input: Displays current task context.
-    """
+    \"""
   STOP immediately.
 
 

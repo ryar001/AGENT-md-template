@@ -5,11 +5,11 @@ prompt = """
 [Help Mode]
 IF input contains `--help`:
   Output:
-    """
+    \"""
     Usage: `/track`
     Description: Transactional Checkpoint. Runs AI Tracker, bumps version, commits changes.
     Inputs: None.
-    """
+    \"""
   STOP immediately.
 
 

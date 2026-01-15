@@ -4,13 +4,13 @@ prompt = """
 [Help Mode]
 IF input contains `--help`:
   Output:
-    """
+    \"""
     Usage: `/extension <subcommand> <args>`
     Description: Extension Manager (Install/Update).
     Inputs:
       - install <URL> [--global]: Install from Git URL.
       - update <Name> [--global]: Update existing extension.
-    """
+    \"""
   STOP immediately.
 
 

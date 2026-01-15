@@ -4,13 +4,13 @@ prompt = """
 [Help Mode]
 IF input contains `--help`:
   Output:
-    """
+    \"""
     Usage: `/readme [--path <PATH>]`
     Description: smart README updater. Analyzes git diffs to update documentation.
     Inputs:
       - [--path <PATH>]: Optional. Specific path to the README file to update.
       - Default: Auto-detects README.md (root preferred). Asks if multiple found.
-    """
+    \"""
   STOP immediately.
 
 
