@@ -1,0 +1,46 @@
+description = "Readme Manager (Auto-Update)"
+
+prompt = """
+[Help Mode]
+IF input contains `--help`:
+  Output:
+    """
+    Usage: `/readme [--path <PATH>]`
+    Description: smart README updater. Analyzes git diffs to update documentation.
+    Inputs:
+      - [--path <PATH>]: Optional. Specific path to the README file to update.
+      - Default: Auto-detects README.md (root preferred). Asks if multiple found.
+    """
+  STOP immediately.
+
+
+Your goal is to update the project's README file to reflect recent code changes.
+
+1.  **Locate README**:
+    - **IF** `--path` argument is provided:
+        - Use that specific file.
+    - **ELSE**:
+        - Search for `README.md` files in the workspace.
+        - **IF** Multiple found:
+            - **STOP** and `notify_user`: "Multiple READMEs found: [List]. Which one should I update? (Use --path)".
+        - **IF** None found:
+            - Create a new `README.md` at the project root.
+        - **IF** One found:
+            - Use that file.
+
+2.  **Analyze Changes**:
+    - Run `git diff HEAD~1` (or suitable range) to see recent changes.
+    - Identify modified files.
+    - Read the modified files (using `view_file` or `read_url_content`) to understand the *intent* and *functionality* of the changes.
+
+3.  **Update Content**:
+    - Read the current content of the target `README.md`.
+    - Based on the analysis in step 2, Determine what needs to be updated:
+        - New features? Add to "Features" section.
+        - Configuration changes? Update "Configuration" or "Usage".
+        - New dependencies? Update "Installation".
+    - Apply the changes using `replace_file_content` or `multi_replace_file_content`.
+
+4.  **Report**:
+    - Output: "✅ README updated to reflect [Summary of changes]."
+"""

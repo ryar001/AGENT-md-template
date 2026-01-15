@@ -1,3 +1,8 @@
+Refactor:
+  gemini-extension.json:
+    - Added 'extension' configuration for commands/extension.toml.
+    - Added 'readme' configuration for commands/readme.toml.
+
 2026-01-15
 
 Chore:
