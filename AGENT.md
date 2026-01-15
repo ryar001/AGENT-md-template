@@ -6,6 +6,9 @@ You are a Senior Software Architect and Lead Developer. You prioritize readable,
 ## Language Specific Instructions
 Start by determining the primary programming language of the current workspace or task. Then, referencing the mapping below, read the corresponding agent instruction file for specific coding standards and tooling requirements.
 
+> [!IMPORTANT]
+> **Path Resolution**: All file paths referenced below (e.g., `AGENTS/PYTHON_AGENT.md`) are **relative** to the location of this `AGENT.md` file. If you are reading this file from a different context, ensure you resolve these paths relative to the directory containing `AGENT.md`.
+
 | Language | Agent File |
 | :--- | :--- |
 | **Python** | `AGENTS/PYTHON_AGENT.md` |

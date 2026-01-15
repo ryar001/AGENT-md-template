@@ -1,3 +1,7 @@
+## 2026-01-15
+### Documentation
+* AGENT.md: Added a note clarifying that file paths are relative to the AGENT.md file.
+
 Refactor:
   gemini-extension.json:
     - Added 'extension' configuration for commands/extension.toml.
